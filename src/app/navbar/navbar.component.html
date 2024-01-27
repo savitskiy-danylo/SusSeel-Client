@@ -1,0 +1,18 @@
+<nav class="navbar navbar-expand-lg navbar-light sticky-top" data-navbar-on-scroll="data-navbar-on-scroll">
+  <div class="container">
+    <a class="navbar-brand" href="index.html">
+      <img src="assets/img/logo.png" alt="logo" />
+    </a>
+    <div class="space-between"></div>
+    <div class="d-flex ms-lg-4">
+      <p-button severity="warning" *ngIf="isLogged() == false" (onClick)="ShowDialog()">Sign In</p-button>
+      <p-button severity="warning" *ngIf="isLogged()" (onClick)="clearUser()">ClearUser</p-button>
+    </div>
+  </div>        
+</nav>
+<p-dialog class="center-dialog" header="Sign In!" [(visible)]="visible" [modal]="true" [style]="{ width: '50vw', height: '30vh' }" [draggable]="false" [resizable]="false" [blockScroll]="true">
+  <div class="center-content">
+    <asl-google-signin-button type='standard' shape="pill" size='medium' text="Sign In with Google!"></asl-google-signin-button>
+  </div>
+</p-dialog>
+
